@@ -15,28 +15,51 @@
         function getComputerChoice() {
             return choices[Math.floor(Math.random() * choices.length)];
         }
-
+// Create Game Logic
         function playRound(playerChoice, computerChoice) {
             if (playerChoice === "Rock" && computerChoice === "Scissors") {
-                console.log("You win! Rock beats Scissors.")
+                playerScore++;
+                return ("You win! Rock beats Scissors.")
             } else if (playerChoice === "Paper" && computerChoice === "Rock") {
-                console.log("You win! Paper beats Rock.")
+                playerScore++;
+                return ("You win! Paper beats Rock.")
             } else if (playerChoice === "Scissors" && computerChoice === "Paper") {
-                console.log("You win! Scissors beats Paper.")
+                playerScore++;
+                return ("You win! Scissors beats Paper.")
             } else if (playerChoice === "Scissors" && computerChoice === "Rock") {
-                console.log("You lose! Rock beats Scissors.")
+                computerScore++;
+                return ("You lose! Rock beats Scissors.")
             } else if (playerChoice === "Rock" && computerChoice === "Paper") {
-                console.log("You lose! Paper beats Rock.")
+                computerScore++;
+                return ("You lose! Paper beats Rock.")
             } else if (playerChoice === "Paper" && computerChoice === "Scissors") {
-                console.log("You lose! Scissors beats Paper.")
+                computerScore++;
+                return ("You lose! Scissors beats Paper.")
             } else if (playerChoice === "Rock" && computerChoice === "Rock") {
-                console.log("Tie! You both chose Rock.")
+                return ("Tie! You both chose Rock.")
             } else if (playerChoice === "Paper" && computerChoice === "Paper") {
-                console.log("Tie! You both chose Paper.")
+                return ("Tie! You both chose Paper.")
             } else {
-                console.log("Tie! You both chose Scissors.")
+                return ("Tie! You both chose Scissors.")
             }
         }
+// Define the Game Process
+        function game() {
+            var playerScore = 0;
+            var computerScore = 0;
+            for (let i = 0; i < 5; i++) {
+                console.log(playRound());
+                prompt("Choose: Rock, Paper, or Scissors");
+                if (playerScore === 5) {
+                    console.log("Congratulations! You won!")
+                } else if (computerScore === 5) {
+                    console.log("Drats! You lost. Try again!")
+                } else {
+                    console.log(`The score is: Player - ${playerScore} to Computer - ${computerScore}`);
+                }
+            }
+        }
+        game();
     </script>
 </body>
 </html>
