@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOP Ro-Sham-Bo</title>
+</head>
+<body>
+<!-- BEGINNING OF CSS CODE -->
+    <script>
+        const choices = ["Rock", "Paper", "Scissors"];
+
+// Get Computer Choice
+        function getComputerChoice() {
+            return choices[Math.floor(Math.random() * choices.length)];
+        }
+
+        function playRound(playerChoice, computerChoice) {
+            if (playerChoice === "Rock" && computerChoice === "Scissors") {
+                console.log("You win! Rock beats Scissors.")
+            } else if (playerChoice === "Paper" && computerChoice === "Rock") {
+                console.log("You win! Paper beats Rock.")
+            } else if (playerChoice === "Scissors" && computerChoice === "Paper") {
+                console.log("You win! Scissors beats Paper.")
+            } else if (playerChoice === "Scissors" && computerChoice === "Rock") {
+                console.log("You lose! Rock beats Scissors.")
+            } else if (playerChoice === "Rock" && computerChoice === "Paper") {
+                console.log("You lose! Paper beats Rock.")
+            } else if (playerChoice === "Paper" && computerChoice === "Scissors") {
+                console.log("You lose! Scissors beats Paper.")
+            } else if (playerChoice === "Rock" && computerChoice === "Rock") {
+                console.log("Tie! You both chose Rock.")
+            } else if (playerChoice === "Paper" && computerChoice === "Paper") {
+                console.log("Tie! You both chose Paper.")
+            } else {
+                console.log("Tie! You both chose Scissors.")
+            }
+        }
+    </script>
+</body>
+</html>
