@@ -47,14 +47,17 @@
         }
 // Define the Game Process
         function game() {
-            var computerChoice = getComputerChoice();
-            var playerChoice = prompt("Choose: Rock, Paper, or Scissors");
-            for (let i = 0; i < 5; i++) {
+            console.log("First to 3 wins! Game on.")
+            for (let i = 0; i < 100; i++) {
+                var computerChoice = getComputerChoice();
+                var playerChoice = prompt("Choose: Rock, Paper, or Scissors");
                 console.log((playRound(playerChoice, computerChoice)));
-                if (playerScore === 5) {
-                    console.log("Congratulations! You won!")
-                } else if (computerScore === 5) {
-                    console.log("Drats! You lost. Try again!")
+            if (playerScore === 3) {
+                    console.log(`Congratulations! You won! Player: ${playerScore} Computer: ${computerScore}`);
+                    break;
+                } else if (computerScore === 3) {
+                    console.log(`Drats! You lost. Try again! Player: ${playerScore} Computer: ${computerScore}`);
+                    break;
                 } else {
                     console.log(`The score is: Player - ${playerScore} to Computer - ${computerScore}`);
                 }
