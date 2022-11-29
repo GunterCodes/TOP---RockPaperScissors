@@ -9,7 +9,7 @@
 <body>
 <!-- BEGINNING OF CSS CODE -->
     <script>
-        const choices = ["Rock", "Paper", "Scissors"];
+        const choices = ["rock", "paper", "scissors"];
         var playerScore = 0;
         var computerScore = 0;
 
@@ -19,27 +19,27 @@
         }
 // Create Game Logic
         function playRound(playerChoice, computerChoice) {
-            if (playerChoice === "Rock" && computerChoice === "Scissors") {
+            if (playerChoice === "rock" && computerChoice === "scissors") {
                 playerScore++;
                 return ("You win! Rock beats Scissors.")
-            } else if (playerChoice === "Paper" && computerChoice === "Rock") {
+            } else if (playerChoice === "paper" && computerChoice === "rock") {
                 playerScore++;
                 return ("You win! Paper beats Rock.")
-            } else if (playerChoice === "Scissors" && computerChoice === "Paper") {
+            } else if (playerChoice === "scissors" && computerChoice === "paper") {
                 playerScore++;
                 return ("You win! Scissors beats Paper.")
-            } else if (playerChoice === "Scissors" && computerChoice === "Rock") {
+            } else if (playerChoice === "scissors" && computerChoice === "rock") {
                 computerScore++;
                 return ("You lose! Rock beats Scissors.")
-            } else if (playerChoice === "Rock" && computerChoice === "Paper") {
+            } else if (playerChoice === "rock" && computerChoice === "paper") {
                 computerScore++;
                 return ("You lose! Paper beats Rock.")
-            } else if (playerChoice === "Paper" && computerChoice === "Scissors") {
+            } else if (playerChoice === "paper" && computerChoice === "scissors") {
                 computerScore++;
                 return ("You lose! Scissors beats Paper.")
-            } else if (playerChoice === "Rock" && computerChoice === "Rock") {
+            } else if (playerChoice === "rock" && computerChoice === "rock") {
                 return ("Tie! You both chose Rock.")
-            } else if (playerChoice === "Paper" && computerChoice === "Paper") {
+            } else if (playerChoice === "paper" && computerChoice === "paper") {
                 return ("Tie! You both chose Paper.")
             } else {
                 return ("Tie! You both chose Scissors.")
@@ -50,7 +50,7 @@
             console.log("First to 3 wins! Game on.")
             for (let i = 0; i < 100; i++) {
                 var computerChoice = getComputerChoice();
-                var playerChoice = prompt("Choose: Rock, Paper, or Scissors");
+                var playerChoice = prompt("Choose: Rock, Paper, or Scissors").toLowerCase();
                 console.log((playRound(playerChoice, computerChoice)));
             if (playerScore === 3) {
                     console.log(`Congratulations! You won! Player: ${playerScore} Computer: ${computerScore}`);
