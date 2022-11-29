@@ -10,6 +10,8 @@
 <!-- BEGINNING OF CSS CODE -->
     <script>
         const choices = ["Rock", "Paper", "Scissors"];
+        var playerScore = 0;
+        var computerScore = 0;
 
 // Get Computer Choice
         function getComputerChoice() {
@@ -45,11 +47,10 @@
         }
 // Define the Game Process
         function game() {
-            var playerScore = 0;
-            var computerScore = 0;
+            var computerChoice = getComputerChoice();
+            var playerChoice = prompt("Choose: Rock, Paper, or Scissors");
             for (let i = 0; i < 5; i++) {
-                console.log(playRound());
-                prompt("Choose: Rock, Paper, or Scissors");
+                console.log((playRound(playerChoice, computerChoice)));
                 if (playerScore === 5) {
                     console.log("Congratulations! You won!")
                 } else if (computerScore === 5) {
